@@ -22,7 +22,7 @@ def load_model():
 
 def run_model(pipe, prompt, save_image=False):
     with autocast("cuda"):
-        image = pipe(prompt, height=IMAGE_HEIGHT, width=IMAGE_WIDTH)["sample"][0]
+        image = pipe(prompt, height=IMAGE_HEIGHT, width=IMAGE_WIDTH)["images"][0]
 
     if save_image:
         ts = str(int(time.time()))
